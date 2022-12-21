@@ -13,6 +13,9 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat&display=swap');
 
+    * {
+      box-sizing: border-box;
+    }
     body {
 
       max-width: 1440px;
@@ -38,6 +41,8 @@
 
     .grid-item img {
       border-radius: 5% 0% 0% 5%;
+      width: 220px;
+      height: 350px;
     }
 
     .small-grid {
@@ -67,9 +72,48 @@
     /* put a limit for if at 375 or less */
     @media screen and (max-width: 375px) {
 
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        margin: 0;
+        padding-top: 10px;
+      }
+
       .grid-layout {
         display: block;
+        grid-template-columns: 175px 175px;
+        max-width: 350px;
+        padding: 15px;
+        
       }
+
+      .grid-item {
+        border-radius: 0% 0% 0% 0%;
+        height: 275px;
+        background-color: white;
+        text-align: left;
+        
+      }
+
+      .two {
+        height: 320px;
+        
+      }
+
+      .grid-item img {
+        /* 100% makes the image responsive with the grid item */
+        width: 100%;
+        height: 100%;
+        border-radius: 0% 0% 0% 0%;
+
+      }
+
+      .cart-button {
+        margin-left: 15%;
+      }
+      
 
     }
 
@@ -83,10 +127,11 @@
     <div class="grid-layout">
 
       <div class="grid-item">
-        <img src="images/image-product-desktop.jpg" width="220px" height="350px">
+        <img src="images/image-product-desktop.jpg">
       </div>
 
-      <div class="grid-item" style="padding-left: 10px;">
+
+      <div class="grid-item two" style="padding-left: 10px;">
 
         <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 2px;">
           PERFUME
@@ -116,9 +161,9 @@
 
         </p>
         
+        <div  style="padding: 10px 0 0 0;">   
 
-        <div  style="padding: 10px 0 0 0; margin: 0;">   
-
+          
         <a class="cart-button" href="https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa/hub" style="text-decoration: none;"> <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" fill="#FFF"/></svg> Add to Cart</a>
 
      
@@ -132,22 +177,5 @@
   </center>
 
   
-
-  <!-- Preview
-
-  Gabrielle Essence Eau De Parfum
-
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
-   -->
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
 </body>
 </html>
